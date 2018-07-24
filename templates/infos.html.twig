@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block bodyclass %}subpage{% endblock %}
+{% block body %}
+	<!-- Menu -->
+    {% include 'menu.html.twig' %}
+
+	<!-- Content -->
+	<!--
+        Note: To show a background image, set the "data-bg" attribute below
+        to the full filename of your image. This is used in each section to set
+        the background image.
+    -->
+	<section id="post" class="wrapper bg-img" data-bg="two_of_us.jpg">
+		<div class="inner">
+			<article class="box">
+				<header>
+					<h2>{{ practicalInfos.title }}</h2>
+					<p>{{ practicalInfos.date|date('Y-m-d') }}</p>
+				</header>
+				<div class="content">
+                    {{ practicalInfos.intro|raw }}
+				</div>
+				<div class="content">
+                    {{ practicalInfos.content|raw }}
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Footer -->
+    {% include 'footer.html.twig' %}
+
+{% endblock %}
