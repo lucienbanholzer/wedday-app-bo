@@ -31,16 +31,51 @@ services:
     # please note that last definitions always *replace* previous ones
 
     #Sonata admins
-    admin.practical_infos:
-        class: App\Admin\PracticalInfosAdmin
-        arguments: [~, App\Entity\PracticalInfos, ~]
+    admin.quiz:
+        class: App\Admin\QuizAdmin
+        arguments: [~, App\Entity\Quiz, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: Infos pratiques }
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Quiz }
         public: true
 
-    admin.post:
-        class: App\Admin\PostAdmin
-        arguments: [~, App\Entity\Post, ~]
+    admin.guest:
+        class: App\Admin\GuestAdmin
+        arguments: [~, App\Entity\Guest, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: Post }
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Invités }
+        public: true
+
+    admin.killer:
+        class: App\Admin\KillerAdmin
+        arguments: [~, App\Entity\Killer, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Killer }
+        public: true
+
+    admin.photos_contest:
+        class: App\Admin\PhotosContestAdmin
+        arguments: [~, App\Entity\PhotosContest, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Photos contest }
+        public: true
+
+    admin.question:
+        class: App\Admin\QuestionAdmin
+        arguments: [~, App\Entity\Question, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Questions }
+        public: true
+
+    admin.golden_book:
+        class: App\Admin\GoldenBookAdmin
+        arguments: [~, App\Entity\GoldenBook, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Livre d'or }
+        public: true
+
+    admin.golden_book_message:
+        class: App\Admin\GoldenBookMessageAdmin
+        arguments: [~, App\Entity\GoldenBookMessage, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contenus", label: Message du livre d'or }
         public: true
